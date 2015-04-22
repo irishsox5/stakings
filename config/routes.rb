@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tours
+
   # STATIC ROUTES==============================================
   root "static_pages#home"
   get '/landing_page' => "static_pages#home", :as => "landing"

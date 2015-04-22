@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="/assets/plugins/bxslider/jquery.bxslider.css">
   <link rel="stylesheet" href="/assets/plugins/fancybox/source/jquery.fancybox.css">
   <link rel="stylesheet" href="/assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+  <link rel="stylesheet" href="/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
 
   <!-- Profile Page CSS Plugins -->
   <link rel="stylesheet" href="/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
@@ -52,6 +54,7 @@
   <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script>
   <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
   <!-- JS Implementing Plugins -->
   <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
@@ -76,6 +79,7 @@
   <script type="text/javascript" src="/assets/plugins/counter/jquery.counterup.min.js"></script>
   <script type="text/javascript" src="/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
   <script type="text/javascript" src="/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/cube-portfolio/cube-portfolio-4-fw-tx.js"></script>
   <!-- End Profile Page JS -->
 
 <!--[if lt IE 9]>
@@ -94,12 +98,8 @@
   <body>
     <%= render 'layouts/navbar' %>
 
-    <div class="wrapper">
-
       <%= yield %>
 
-     <%= render 'layouts/footer' %>
-
-    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
