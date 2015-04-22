@@ -2,7 +2,7 @@
   <!--=== Breadcrumbs ===-->
   <div class="breadcrumbs breadcrumbs-light">
     <div class="container">
-      <h1 class="text-center">Poker Tours</h1>
+      <h1 class="text-center"></h1>
     </div>
   </div>
   <!--=== End Breadcrumbs ===-->
@@ -24,27 +24,26 @@
 
   <hr>
 
-  <!--=== Cube-Portfdlio ===-->
-  <div class="cube-portfolio margin-bottom-20">
-
-    <div id="grid-container" class="cbp-l-grid-agency isotope-container">
-      <div class="cbp-item graphic">
+  <!--=== Cube-Tours ===-->
+  <div class="cube-portfolio margin-bottom-20 isotope-container">
+    <div id="grid-container" class="cbp-l-grid-agency">
+      <div class="cbp-item graphic isotope-item">
         <div class="cbp-caption margin-bottom-20">
           <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img26.jpg" alt="">
+            <img src="/assets/img/main/img26.jpg" alt="">
           </div>
           <div class="cbp-caption-activeWrap">
             <div class="cbp-l-caption-alignCenter">
               <div class="cbp-l-caption-body">
                 <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                  <li><%= link_to tours_url do %><i class="rounded-x fa fa-link"></i> <% end %> </li>
                   <li><a href="/assets/img/main/img26.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="cbp-title-dark isotope-item">
+        <div class="cbp-title-dark">
           <div class="cbp-l-grid-agency-title">Design Object 01</div>
           <div class="cbp-l-grid-agency-desc">Web Design</div>
         </div>
@@ -282,7 +281,7 @@
       </div>
     </div><!--/end Grid Container-->
   </div>
-  <!--=== End Cube-Portfdlio ===-->
+  <!--=== End Cube-Tours ===-->
 
 
 
@@ -367,6 +366,7 @@
 <script type="text/javascript" src="/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
 <script type="text/javascript" src="/assets/js/plugins/cube-portfolio/cube-portfolio-4-fw-tx.js"></script>
+
 <script type="text/javascript">
   jQuery(document).ready(function() {
     App.init();
