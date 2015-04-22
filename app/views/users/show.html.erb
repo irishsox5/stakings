@@ -112,8 +112,18 @@
                     <div id="inline-start"></div>
                 </form>
                 <!--End Datepicker-->
-            </div>
-            <!--End Left Sidebar-->
+
+                <a class="twitter-timeline"
+                href="https://twitter.com/twitterapi"
+                data-widget-id="578710097695797248"
+                width="250"
+                height="500"
+                data-user-id=<%= @user.uid %>
+                data-show-replies="false"
+                data-tweet-limit="50">
+            </a>
+        </div>
+        <!--End Left Sidebar-->
 
             <!-- Profile Content -->
             <div class="col-md-9">
@@ -181,12 +191,48 @@
                     <!--End Service Block v3-->
 
                     <hr>
-
-                    <div class="row margin-bottom-20">
-                        <!--Profile Post-->
-                        <div class="col-sm-6">
-                            <div class="panel panel-profile no-bg">
-                                <div class="panel-heading overflow-h">
+                    <!-- Tab v1 -->
+                <div class="tab-v1">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                        <li><a href="#profile" data-toggle="tab">Previous Cashes</a></li>
+                        <li><a href="#messages" data-toggle="tab">Investors</a></li>
+                        <li><a href="#settings" data-toggle="tab">Graphs</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="" class="img-responsive img-tab-space" src="/assets/img/main/img10.jpg">
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>Heading Sample 1</h4>
+                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="profile">
+                            <img alt="" class="pull-left lft-img-margin img-width-200" src="/assets/img/main/img20.jpg">
+                            <h4>Heading Sample 2</h4>
+                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
+                        </div>
+                        <div class="tab-pane fade in" id="messages">
+                            <h4>Heading Sample 3</h4>
+                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="/assets/img/main/img18.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        </div>
+                        <div class="tab-pane fade in" id="settings">
+                            <h4>Heading Sample 4</h4>
+                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="/assets/img/main/img24.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Tab v1 -->
+                <hr>
+                <div class="row margin-bottom-20">
+                    <!--Profile Post-->
+                    <div class="col-sm-6">
+                        <div class="panel panel-profile no-bg">
+                            <div class="panel-heading overflow-h">
                                     <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Notes</h2>
                                     <a href="#"><i class="fa fa-cog pull-right"></i></a>
                                 </div>
@@ -666,181 +712,6 @@
                         </div>
                     </div>
                     <!--End Table Search v1-->
-
-                    <!-- Begin Table Search v2 -->
-                    <div class="table-search-v2">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>User Image</th>
-                                        <th class="hidden-sm">About</th>
-                                        <th>Status</th>
-                                        <th>Contacts</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <img class="rounded-x" src="/assets/img/testimonials/img1.jpg" alt="">
-                                        </td>
-                                        <td class="td-width">
-                                            <h3><a href="#">Sed nec elit arcu</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id commodo lacus. Fusce non malesuada ante. Donec vel arcu.</p>
-                                            <small class="hex">Joined February 28, 2014</small>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">Success</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline s-icons">
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Dropbox" href="#">
-                                                    <i class="fa fa-dropbox"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Linkedin" href="#">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <span><a href="#">info@example.com</a></span>
-                                            <span><a href="#">www.htmlstream.com</a></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img class="rounded-x" src="/assets/img/testimonials/img2.jpg" alt="">
-                                        </td>
-                                        <td>
-                                            <h3><a href="#">Donec at aliquam est, a mattis mauris</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id commodo lacus. Fusce non malesuada ante. Donec vel arcu.</p>
-                                            <small class="hex">Joined March 2, 2014</small>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info"> Pending</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline s-icons">
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Dropbox" href="#">
-                                                    <i class="fa fa-dropbox"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Linkedin" href="#">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <span><a href="#">info@example.com</a></span>
-                                            <span><a href="#">www.htmlstream.com</a></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img class="rounded-x" src="/assets/img/testimonials/img3.jpg" alt="">
-                                        </td>
-                                        <td>
-                                            <h3><a href="#">Pellentesque semper tempus vehicula</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id commodo lacus. Fusce non malesuada ante. Donec vel arcu.</p>
-                                            <small class="hex">Joined March 3, 2014</small>
-                                        </td>
-                                        <td>
-                                            <span class="label label-warning">Expiring</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline s-icons">
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Dropbox" href="#">
-                                                    <i class="fa fa-dropbox"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Linkedin" href="#">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <span><a href="#">info@example.com</a></span>
-                                            <span><a href="#">www.htmlstream.com</a></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img class="rounded-x" src="/assets/img/testimonials/img4.jpg" alt="">
-                                        </td>
-                                        <td>
-                                            <h3><a href="#">Alesuada fames ac turpis egestas</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id commodo lacus. Fusce non malesuada ante. Donec vel arcu.</p>
-                                            <small class="hex">Joined March 4, 2014</small>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">Error!</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline s-icons">
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Dropbox" href="#">
-                                                    <i class="fa fa-dropbox"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Linkedin" href="#">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <span><a href="#">info@example.com</a></span>
-                                            <span><a href="#">www.htmlstream.com</a></span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- End Table Search v2 -->
                 </div>
             </div>
             <!-- End Profile Content -->
@@ -864,6 +735,7 @@
 <!-- JS Page Level -->
 <script type="text/javascript" src="/assets/js/app.js"></script>
 <script type="text/javascript" src="/assets/js/plugins/datepicker.js"></script>
+<script src="//platform.twitter.com/widgets.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
