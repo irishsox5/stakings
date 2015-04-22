@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html>
+<head>
+  <title>Stakings</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Web Fonts -->
+  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- CSS Header and Footer -->
+  <link rel="stylesheet" href="/assets/css/headers/header-v6.css">
+  <link rel="stylesheet" href="/assets/css/footers/footer-v6.css">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/assets/plugins/animate.css">
+  <link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
+  <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/plugins/flexslider/flexslider.css">
+  <link rel="stylesheet" href="/assets/plugins/bxslider/jquery.bxslider.css">
+  <link rel="stylesheet" href="/assets/plugins/fancybox/source/jquery.fancybox.css">
+  <link rel="stylesheet" href="/assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+
+  <!-- Profile Page CSS Plugins -->
+  <link rel="stylesheet" href="/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+  <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+  <!-- End Profile Page CSS Plugins -->
+
+  <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+
+  <!-- CSS Pages Style -->
+  <link rel="stylesheet" href="/assets/css/pages/page_one.css">
+  <link rel="stylesheet" href="/assets/css/pages/profile.css">
+
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- JS Global Compulsory -->
+  <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
+  <script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script>
+  <script type="text/javascript" src="/assets/plugins/jquery.parallax.js"></script>
+  <script type="text/javascript" src="/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+
+  <!-- JS Customization -->
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+
+  <!-- JS Page Level -->
+
+  <script type="text/javascript" src="/assets/js/plugins/fancy-box.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/revolution-slider.js"></script>
+  <!-- Profile Page JS -->
+  <script type="text/javascript" src="/assets/js/plugins/datepicker.js"></script>
+  <script type="text/javascript" src="/assets/plugins/counter/waypoints.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/counter/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- End Profile Page JS -->
+
+<!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+    <script src="assets/plugins/html5shiv.js"></script>
+    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        App.init();
+      });
+    </script>
+
+  </head>
+  <body>
+    <%= render 'layouts/navbar' %>
+
+    <div class="wrapper">
+
+      <%= yield %>
+
+     <%= render 'layouts/footer' %>
+
+    </div>
+  </body>
+</html>
