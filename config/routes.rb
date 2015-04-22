@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :stakes
+
   resources :tours
 
   # STATIC ROUTES==============================================

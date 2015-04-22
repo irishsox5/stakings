@@ -1,0 +1,47 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Stake #<%= @stake.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>User</dt>
+              <dd><%= @stake.user_id %></dd>
+
+              <dt>Tour</dt>
+              <dd><%= @stake.tour_id %></dd>
+
+              <dt>Tournament</dt>
+              <dd><%= @stake.tournament_id %></dd>
+
+              <dt>Amount of shares</dt>
+              <dd><%= @stake.amount_of_shares %></dd>
+
+              <dt>Mark up</dt>
+              <dd><%= @stake.mark_up %></dd>
+
+              <dt>Description</dt>
+              <dd><%= @stake.description %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <%= link_to icon('chevron-left'), stakes_path, class: "btn btn-primary" %>
+
+              <%= link_to icon('edit'), edit_stake_path(@stake), class: "btn btn-warning" %>
+
+              <%= link_to icon('trash-o'), @stake, method: :delete, data: { confirm: "Do you really want to delete this stake?" }, class: "btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
+
