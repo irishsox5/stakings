@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
+#User Log In
 gem 'omniauth-twitter'
 gem "figaro"
 
-gem 'bootstrap-sass', '~> 3.3.3'
+# Easy Use of Font Awesome icons
 gem 'font-awesome-sass', '~> 4.3.0'
+
+#User Activity Feed
+gem 'public_activity'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

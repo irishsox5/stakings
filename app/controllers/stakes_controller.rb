@@ -27,9 +27,19 @@ class StakesController < ApplicationController
   # POST /stakes.json
   def create
     @stake = Stake.new(stake_params)
+    @stake.tournament_id_2 = params[:tournament_id_2]
+    @stake.tournament_id_3 = params[:tournament_id_3]
+    @stake.tournament_id_4 = params[:tournament_id_4]
+    @stake.tournament_id_5 = params[:tournament_id_5]
+    @stake.tournament_id_6 = params[:tournament_id_6]
+    @stake.tournament_id_7 = params[:tournament_id_7]
+    @stake.tournament_id_8 = params[:tournament_id_8]
+    @stake.tournament_id_9 = params[:tournament_id_9]
+    @stake.tournament_id_10 = params[:tournament_id_10]
 
     respond_to do |format|
       if @stake.save
+        @stake.create_activity :create, owner: current_user
         format.html { redirect_to @stake, notice: 'Stake was successfully created.' }
         format.json { render :show, status: :created, location: @stake }
       else

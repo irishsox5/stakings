@@ -1,0 +1,22 @@
+ <% if activity.trackable %>
+    <a class="pull-left" href="#">
+      <%= image_tag activity.owner.image_url, class: "media-object rounded-x"  %>
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">
+        <strong><%= link_to activity.owner.username, activity.owner if activity.owner%></strong> @<%= activity.owner.screen_name %>
+        <small><%= time_ago_in_words(activity.created_at) %> ago</small>
+      </h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada rhoncus tellus blandit facilisis. Morbi faucibus eros facilisis vulputate mollis. Mauris sodales ante lorem, sed fringilla orci rhoncus ac. Donec sit amet eros at libero egestas interdum non quis libero.<%= link_to activity.trackable.tour.name, activity.trackable  %></p>
+      <ul class="list-inline results-list pull-left">
+        <li><a href="#">25 Likes</a></li>
+        <li><a href="#">10 Share</a></li>
+      </ul>
+      <ul class="list-inline pull-right">
+        <li><a href="#"><i class="expand-list rounded-x fa fa-reply"></i></a></li>
+        <li><a href="#"><i class="expand-list rounded-x fa fa-heart"></i></a></li>
+        <li><a href="#"><i class="expand-list rounded-x fa fa-retweet"></i></a></li>
+      </ul>
+    </div>
+<% end %>
+
