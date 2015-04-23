@@ -19,9 +19,7 @@ class User < ActiveRecord::Base
       user.location = auth["info"]["location"]
     end
   end
-end
 
-# Building Investment/Investor Relationship
    def investors
     relationships = self.investment_relationships
     users = []
@@ -42,3 +40,4 @@ end
     return users
   end
 
+end

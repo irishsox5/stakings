@@ -13,7 +13,17 @@
 
 <!--=== Content Part ===-->
 <div class="container content">
+<!-- Responsive, Isotope-based layout example -->
+
   <div class="row">
+    <div class="col-xs-12">
+      <input type="text" id="quicksearch" placeholder="Search Tournaments (start typing)" class="form-control text-center">
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row isotope-container">
     <!-- Begin Content -->
     <div class="col-md-12">
       <!--Basic Table-->
@@ -31,9 +41,9 @@
                 <th>Buy In</th>
               </tr>
             </thead>
+            <% @tour.tournaments.each do |tournament|%>
             <tbody>
              <tr>
-               <% @tour.tournaments.each do |tournament|%>
                <td><%= tournament.start_time %> <br> <%= tournament.start_date %></td>
                <td><%= tournament.event%></td>
                <td><%= number_to_currency(tournament.buy_in) %></td>
@@ -50,4 +60,50 @@
 </div><!--/container-->
 <!--=== End Content Part ===-->
 
+<!-- JavaScript for Isotope layout and quicksearch -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+<script>
+
+ $(function() {
+    // quick search regex
+    var qsRegex;
+
+    // init Isotope
+    var $container = $('.isotope-container');
+
+    $container.imagesLoaded(function() {
+      $container.isotope({
+        itemSelector: '.isotope-item',
+        layoutMode: 'masonry',
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+      })
+    });
+
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+    }, 200 ) );
+
+  });
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce( fn, threshold ) {
+    var timeout;
+    return function debounced() {
+      if ( timeout ) {
+        clearTimeout( timeout );
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout( delayed, threshold || 100 );
+    }
+  }
+</script>
+<!-- End responsive, Isotope-based layout example -->
 

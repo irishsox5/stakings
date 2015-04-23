@@ -27,6 +27,7 @@
   <!--=== Cube-Tours ===-->
   <div class="cube-portfolio margin-bottom-20 isotope-container">
     <div id="grid-container" class="cbp-l-grid-agency">
+      <% @tours.each do |tour| %>
       <div class="cbp-item graphic isotope-item">
         <div class="cbp-caption margin-bottom-20">
           <div class="cbp-caption-defaultWrap">
@@ -36,284 +37,23 @@
             <div class="cbp-l-caption-alignCenter">
               <div class="cbp-l-caption-body">
                 <ul class="link-captions no-bottom-space">
-                  <li><%= link_to tour_url(1) do %><i class="rounded-x fa fa-link"></i> <% end %> </li>
-                  <li><a href="/assets/img/main/img26.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                  <li><%= link_to tour_url(tour.id) do %><i class="rounded-x fa fa-link"></i> <% end %> </li>
+                  <li><a href="/assets/img/main/img26.jpg" class="cbp-lightbox" data-title="<%= tour.name %>"><i class="rounded-x fa fa-search"></i></a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 01</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
+          <div class="cbp-l-grid-agency-title"><%= tour.name %></div>
+          <div class="cbp-l-grid-agency-desc">Live Poker Tour</div>
         </div>
       </div>
-      <div class="cbp-item web-design logos">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img2.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img2.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 02</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item graphic logos">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img9.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img9.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 03</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item web-design graphic">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img10.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img10.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 04</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item identity web-design">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img11.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img11.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 05</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item identity web-design">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img12.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img12.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 06</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item web-design identity">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img19.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img19.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 07</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item identity logo">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img7.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img7.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 08</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item graphic">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img20.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img20.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 09</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item web-design logos">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img3.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img3.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 10</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item graphic logos">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img6.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img6.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 11</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
-      <div class="cbp-item web-design graphic">
-        <div class="cbp-caption margin-bottom-20">
-          <div class="cbp-caption-defaultWrap">
-            <img src="assets/img/main/img16.jpg" alt="">
-          </div>
-          <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-              <div class="cbp-l-caption-body">
-                <ul class="link-captions no-bottom-space">
-                  <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
-                  <li><a href="assets/img/main/img16.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cbp-title-dark">
-          <div class="cbp-l-grid-agency-title">Design Object 12</div>
-          <div class="cbp-l-grid-agency-desc">Web Design</div>
-        </div>
-      </div>
+   <% end %>
     </div><!--/end Grid Container-->
   </div>
   <!--=== End Cube-Tours ===-->
 
-
-
-  <div class="row isotope-container">
-    <% @tours.each do |tour| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Tour #<%= tour.id %></h3>
-        </div>
-        <div class="panel-body">
-          <dl>
-            <dt>Name</dt>
-            <dd><%= tour.name %></dd>
-
-            <dt>Image</dt>
-            <dd><%= tour.image %></dd>
-
-          </dl>
-          <div class="btn-group btn-group-justified">
-            <%= link_to icon('search-plus'), tour, class: "btn btn-primary" %>
-
-            <%= link_to icon('edit'), edit_tour_url(tour), class: "btn btn-warning" %>
-
-            <%= link_to icon('trash-o'), tour, method: :delete, data: { confirm: "Do you really want to delete this tour?" }, class: "btn btn-danger" %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
 <!-- For Background Image -->
     <script type="text/javascript" src="/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
     <script type="text/javascript">
