@@ -15,10 +15,12 @@ class StakesController < ApplicationController
   # GET /stakes/new
   def new
     @stake = Stake.new
+    @tours = Tour.all
   end
 
   # GET /stakes/1/edit
   def edit
+    @tours = Tour.all
   end
 
   # POST /stakes

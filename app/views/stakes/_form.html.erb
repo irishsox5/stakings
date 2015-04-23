@@ -11,31 +11,85 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+
   <div class="field">
     <%= f.label :tour_id %><br>
-    <%= f.number_field :tour_id %>
+    <%= f.collection_select :tour_id, Tour.all, :id, :name, include_blank: true %>
   </div>
+
+<div class="field">
+    <%= f.label :tournament %><br>
+    <%= f.grouped_collection_select :tournament_id, @tours, :tournaments, :name, :id, :event, include_blank: true%>
+
+<div class="input_fields_wrap">
+  <button class="add_field_button">Add More Tournaments</button>
+
+</div>
+</div>
+
   <div class="field">
-    <%= f.label :tournament_id %><br>
-    <%= f.number_field :tournament_id %>
+    <%= f.label :total_amount_of_shares %><br>
+    <%= f.number_field :amount_of_shares, min:0  %>
   </div>
-  <div class="field">
-    <%= f.label :amount_of_shares %><br>
-    <%= f.number_field :amount_of_shares %>
-  </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :mark_up %><br>
-    <%= f.text_field :mark_up %>
+    <%= f.select :mark_up, options_for_select([["1.00","1.00"],["1.10", "1.10"],["1.15", "1.15"], ["1.20", "1.20"],["1.25","1.25"],["1.30", "1.30"], ["1.35","1.35"], ["1.40","1.40"],["1.45","1.45"],["1.50","1.50"]], f.object.mark_up)%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description%>
   </div>
   <div class="actions">
     <%= f.submit %>
+    <button><%= link_to 'Back', stakes_path %></button>
   </div>
 <% end %>
+
+<div class="hide">
+  <% Tour.all.each do |tour| %>
+    <select id="tour_<%=tour.id%>">
+      <%=options_from_collection_for_select(tour.tournaments, :id, :event)%>
+    </select>
+  <% end %>
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+      e.preventDefault();
+        if(x <= max_fields){ //max input box allowed
+            x++; //text box increment
+            var selected_tour_id = $('#stake_tour_id').val();
+            var tournament_options = $("select#tour_"+selected_tour_id+"").html();
+            $(wrapper).append("<div><select name='tournament_id_" + x + "'>"+tournament_options+"</select></div>");//add input box
+
+
+
+           }
+         });
+
+    var tournaments;
+    tournaments = $('#stake_tournament_id').html();
+    return $('#stake_tour_id').change(function() {
+      var options, tour;
+      tour = $('#stake_tour_id :selected').text();
+      options = $(tournaments).filter("optgroup[label= '" + tour + "']").html();
+      if (options) {
+        return $('#stake_tournament_id').html(options);
+      } else {
+        return $('#stake_tournament_id').empty();
+      }
+    });
+});
+
+
+
+</script>
