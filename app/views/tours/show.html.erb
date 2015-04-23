@@ -1,35 +1,155 @@
-<!-- Responsive panel example-->
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+  <div class="container">
+    <h1 class="pull-left"><%= @tour.name %></h1>
+    <ul class="pull-right breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="">Features</a></li>
+      <li class="active">Tabels</li>
+    </ul>
+  </div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
 
-<div class="row">
-  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Tour #<%= @tour.id %></h3>
+<!--=== Content Part ===-->
+<div class="container content">
+  <div class="row">
+    <!-- Begin Content -->
+    <div class="col-md-12">
+      <!--Basic Table-->
+      <div class="panel panel-blue margin-bottom-40">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-map-marker"></i> Location: <%= @tour.tournaments.pluck(:location).first%></h3>
+        </div>
+        <div class="panel-body">
+          <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>Event</th>
+                <th>Buy In</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <% @tour.tournaments.each do |tournament|%>
+               <td><%= tournament.start_time %> <br> <%= tournament.start_date %></td>
+               <td><%= tournament.event%></td>
+               <td><%= number_to_currency(tournament.buy_in) %></td>
+             </tr>
+          </tbody>
+           <% end %>
+        </table>
       </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12">
-            <dl class="dl-horizontal">
-              <dt>Name</dt>
-              <dd><%= @tour.name %></dd>
+      <!--End Basic Table-->
 
-              <dt>Image</dt>
-              <dd><%= @tour.image %></dd>
-
-            </dl>
-            <div class="btn-group btn-group-justified">
-              <%= link_to icon('chevron-left'), tours_path, class: "btn btn-primary" %>
-
-              <%= link_to icon('edit'), edit_tour_path(@tour), class: "btn btn-warning" %>
-
-              <%= link_to icon('trash-o'), @tour, method: :delete, data: { confirm: "Do you really want to delete this tour?" }, class: "btn btn-danger" %>
-            </div>
-          </div>
+      <!--Basic Table Option (Spacing)-->
+      <div class="panel panel-red margin-bottom-40">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-user"></i> Basic Table Option (with space)</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th class="hidden-sm">Last Name</th>
+                <th>Username</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td class="hidden-sm">Otto</td>
+                <td>@mdo</td>
+                <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td class="hidden-sm">Thornton</td>
+                <td>@fat</td>
+                <td><button class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td class="hidden-sm">the Bird</td>
+                <td>@twitter</td>
+                <td><button class="btn btn-info btn-xs"><i class="fa fa-share"></i> Share</button></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>htmlstream</td>
+                <td class="hidden-sm">Web Design</td>
+                <td>@htmlstream</td>
+                <td><button class="btn btn-success btn-xs"><i class="fa fa-check"></i> Submit</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <!--End Basic Table-->
 
-<!-- End responsive panel example -->
+     <!--Table Bordered-->
+      <div class="panel panel-grey margin-bottom-40">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-globe"></i> Table Bordered</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Start Date</th>
+                <th class="hidden-sm">Start Time</th>
+                <th>Event</th>
+                <th>Buy In</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td class="hidden-sm">Otto</td>
+                <td>@mdo</td>
+                <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td class="hidden-sm">Thornton</td>
+                <td>@fat</td>
+                <td><button class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td class="hidden-sm">the Bird</td>
+                <td>@twitter</td>
+                <td><button class="btn btn-info btn-xs"><i class="fa fa-share"></i> Share</button></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>htmlstream</td>
+                <td class="hidden-sm">Web Design</td>
+                <td>@htmlstream</td>
+                <td><button class="btn btn-success btn-xs"><i class="fa fa-check"></i> Submit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--End Table Bordered-->
+    </div>
+    <!-- End Content -->
+  </div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+
 
