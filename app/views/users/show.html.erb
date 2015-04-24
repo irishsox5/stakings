@@ -7,7 +7,7 @@
 
                 <button class="btn-u btn-u-lg btn-block btn-u-blue" type="button">Invest</button>
 
-
+                <% if current_user == @user  %>
                 <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
                     <li class="list-group-item active">
                         <a href="page_profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
@@ -112,8 +112,11 @@
                 <form action="#" id="sky-form2" class="sky-form">
                     <div id="inline-start"></div>
                 </form>
+                <% end %>
                 <!--End Datepicker-->
-                <hr>
+
+               <div class="margin-bottom-50"></div>
+
                 <!-- User Twitter Widget -->
                 <a class="twitter-timeline"
                 href="https://twitter.com/twitterapi"
@@ -144,11 +147,11 @@
                                 <div class="row margin-bottom-20">
                                     <div class="col-xs-6 service-in">
                                         <small>Last Week</small>
-                                        <h4 class="counter">1,385</h4>
+                                        <h4 class="counter"><%= @weekly_investors %></h4>
                                     </div>
                                     <div class="col-xs-6 text-right service-in">
                                         <small>Last Month</small>
-                                        <h4 class="counter">6,048</h4>
+                                        <h4 class="counter"><%= @monthly_investors %></h4>
                                     </div>
                                 </div>
                                 <div class="statistics">
@@ -173,11 +176,11 @@
                                 <div class="row margin-bottom-20">
                                     <div class="col-xs-6 service-in">
                                         <small>Last Week</small>
-                                        <h4 class="counter">26,904</h4>
+                                        <h4 class="counter"><%= @weekly_investments %></h4>
                                     </div>
                                     <div class="col-xs-6 text-right service-in">
                                         <small>Last Month</small>
-                                        <h4 class="counter">124,766</h4>
+                                        <h4 class="counter"><%= @monthly_investments %></h4>
                                     </div>
                                 </div>
                                 <div class="statistics">
@@ -404,56 +407,6 @@
                         </div>
                         <!--End Profile Event-->
                     </div><!--/end row-->
-
-                    <hr>
-
-                    <!--Profile Blog-->
-                    <div class="panel panel-profile">
-                        <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Contacts</h2>
-                            <a href="page_profile_users.html" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-xs pull-right">View All</a>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="profile-blog blog-border">
-                                        <img class="rounded-x" src="/assets/img/testimonials/img1.jpg" alt="">
-                                        <div class="name-location">
-                                            <strong>Mikel Andrews</strong>
-                                            <span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
-                                        </div>
-                                        <div class="clearfix margin-bottom-20"></div>
-                                        <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-                                        <hr>
-                                        <ul class="list-inline share-list">
-                                            <li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
-                                            <li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
-                                            <li><i class="fa fa-twitter"></i><a href="#">Retweet</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="profile-blog blog-border">
-                                        <img class="rounded-x" src="/assets/img/testimonials/img4.jpg" alt="">
-                                        <div class="name-location">
-                                            <strong>Natasha Kolnikova</strong>
-                                            <span><i class="fa fa-map-marker"></i><a href="#">Moscow,</a> <a href="#">Russia</a></span>
-                                        </div>
-                                        <div class="clearfix margin-bottom-20"></div>
-                                        <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-                                        <hr>
-                                        <ul class="list-inline share-list">
-                                            <li><i class="fa fa-bell"></i><a href="#">37 Notifications</a></li>
-                                            <li><i class="fa fa-group"></i><a href="#">46 Followers</a></li>
-                                            <li><i class="fa fa-twitter"></i><a href="#">Retweet</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Profile Blog-->
 
                     <hr>
 

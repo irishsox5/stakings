@@ -10,7 +10,7 @@
   <br>
 
   <div class="text-center margin-bottom-50">
-    <h2 class="title-v2 title-center">LIVE POKER TOURS</h2>
+    <h2 class="title-v2 title-center">THE TOURNAMENTS YOU WANT TO PLAY IN</h2>
     <p class="space-lg-hor">If you are going to use a <span class="color-green">passage of Lorem Ipsum</span>, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making <span class="color-green">this the first</span> true generator on the Internet.</p>
   </div>
 
@@ -25,11 +25,22 @@
   <hr>
 
   <!--=== Cube-Tours ===-->
-  <div class="cube-portfolio margin-bottom-20 isotope-container">
-    <div id="grid-container" class="cbp-l-grid-agency">
-      <% @tours.each do |tour| %>
-      <div class="cbp-item graphic isotope-item">
-        <div class="cbp-caption margin-bottom-20">
+ <!--  <div class="cube-portfolio margin-bottom-20">
+    <div class="content-xs">
+      <div id="filters-container" class="cbp-l-filters-text content-xs">
+        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
+        <div data-filter=".identity" class="cbp-filter-item"> Live Poker Tours </div> |
+        <div data-filter=".web-design" class="cbp-filter-item"> Online Poker Tours </div> |
+        <div data-filter=".graphic" class="cbp-filter-item"> Video Game Tournaments </div> |
+        <div data-filter=".logos" class="cbp-filter-item"> Logo </div>
+      </div><!--/end Filters Container-->
+    <!-- </div> -->
+
+    <div class="cube-portfolio margin-bottom-20 isotope-container">
+      <div id="grid-container" class="cbp-l-grid-agency">
+        <div class="cbp-item graphic isotope-item">
+        <% @tours.each do |tour| %>
+         <div class="cbp-caption margin-bottom-20">
           <div class="cbp-caption-defaultWrap">
             <img src="/assets/img/main/img26.jpg" alt="">
           </div>
@@ -48,27 +59,28 @@
           <div class="cbp-l-grid-agency-title"><%= tour.name %></div>
           <div class="cbp-l-grid-agency-desc">Live Poker Tour</div>
         </div>
+      <% end %>
       </div>
-   <% end %>
     </div><!--/end Grid Container-->
   </div>
+<!-- </div> -->
   <!--=== End Cube-Tours ===-->
 
-<!-- For Background Image -->
-    <script type="text/javascript" src="/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $.backstretch([
-        "/assets/img/bg/13.jpg"
-        ])
-    </script>
-<!-- End For Background Image -->
+  <!-- For Background Image -->
+  <script type="text/javascript" src="/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+  <script type="text/javascript">
+    $.backstretch([
+      "/assets/img/bg/13.jpg"
+      ])
+  </script>
+  <!-- End For Background Image -->
 
-<!-- JavaScript for Isotope layout and quicksearch -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
-<script>
+  <!-- JavaScript for Isotope layout and quicksearch -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+  <script>
 
- $(function() {
+   $(function() {
     // quick search regex
     var qsRegex;
 

@@ -48,15 +48,20 @@
                <td><%= tournament.event%></td>
                <td><%= number_to_currency(tournament.buy_in) %></td>
              </tr>
-            </tbody>
-            <% end %>
-          </table>
-        </div>
-      </div>
-      <!--End Table Bordered-->
+           </tbody>
+           <% end %>
+         </table>
+       </div>
+     </div>
+     <!--End Table Bordered-->
+     <div class="btn-group-lg" role="group">
+     <%= link_to new_stake_path do %>
+     <button class="btn-u btn-brd btn-brd-hover rounded-4x btn-u-red btn-u-lg col-md-12" type="button">Request Stake</button>
+      <% end %>
     </div>
-    <!-- End Content -->
   </div>
+  <!-- End Content -->
+</div>
 </div><!--/container-->
 <!--=== End Content Part ===-->
 
