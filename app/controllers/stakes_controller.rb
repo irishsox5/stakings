@@ -1,6 +1,6 @@
 class StakesController < ApplicationController
   before_action :set_stake, only: [:show, :edit, :update, :destroy]
-
+  impressionist :actions=>[:show]
   # GET /stakes
   # GET /stakes.json
   def index
