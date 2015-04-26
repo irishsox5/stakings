@@ -38,8 +38,8 @@
 
     <div class="cube-portfolio margin-bottom-20 isotope-container">
       <div id="grid-container" class="cbp-l-grid-agency">
+       <% @tours.each do |tour| %>
         <div class="cbp-item graphic isotope-item">
-        <% @tours.each do |tour| %>
          <div class="cbp-caption margin-bottom-20">
           <div class="cbp-caption-defaultWrap">
             <img src="/assets/img/main/img26.jpg" alt="">
@@ -59,8 +59,8 @@
           <div class="cbp-l-grid-agency-title"><%= tour.name %></div>
           <div class="cbp-l-grid-agency-desc">Live Poker Tour</div>
         </div>
-      <% end %>
       </div>
+     <% end %>
     </div><!--/end Grid Container-->
   </div>
 <!-- </div> -->
