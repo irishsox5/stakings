@@ -10,6 +10,11 @@ gem 'font-awesome-sass', '~> 4.3.0'
 #User Activity Feed
 gem 'public_activity'
 
+#ImageUploades
+gem 'carrierwave'
+gem "rmagick"
+gem "mini_magick"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

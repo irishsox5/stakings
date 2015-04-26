@@ -40,10 +40,12 @@ ActiveRecord::Schema.define(version: 20150423184602) do
   create_table "stakes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tour_id"
+    t.integer  "tournament_id"
     t.integer  "amount_of_shares"
     t.float    "mark_up"
     t.text     "description"
-    t.integer  "tournament_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "tournament_id_2"
     t.integer  "tournament_id_3"
     t.integer  "tournament_id_4"
@@ -53,8 +55,6 @@ ActiveRecord::Schema.define(version: 20150423184602) do
     t.integer  "tournament_id_8"
     t.integer  "tournament_id_9"
     t.integer  "tournament_id_10"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
   end
 
   create_table "tournaments", force: :cascade do |t|
