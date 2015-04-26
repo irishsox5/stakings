@@ -11,7 +11,7 @@
           <a href="#"><i class="fa fa-cog pull-right"></i></a>
         </div>
         <div class="panel-body margin-bottom-50">
-          <div class="media media-v2">
+          <div id="scrollbar2" class="media media-v2 mCustomScrollbar">
           <% @activities.each do |activity| %>
           <%= render_activity activity  %>
            <% end %>
