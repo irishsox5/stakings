@@ -28,6 +28,10 @@ body.header-fixed-space {
   }
 }
 
+.field {
+	font-size: 20px;
+}
+
 dt {
   font-size: 20px;
 }
