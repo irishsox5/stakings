@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :tournaments
 
-  resources :stakes
+  resources :stakes do
+     resources :comments, :only => [:create]
+ end
 
   resources :tours
 

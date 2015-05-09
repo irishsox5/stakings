@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :stakes
   has_many :tours
   has_many :tournaments
+  has_many :comments
   # Investment Relationship
   has_many :investor_relationships, class_name: "Relationship",foreign_key: 'investor_id'
   has_many :investment_relationships, class_name: "Relationship",foreign_key: 'investment_id'

@@ -73,6 +73,26 @@
         </div>
       </div>
     </div>
+    <ul class="media-list">
+    <% @stake.comments.each do |comment| %>
+    <%= render "comments/comment", :comment => comment %>
+    <% end %>
+
+        <% comment = Comment.new %>
+        <% comment.stake_id = @stake.id %>
+        <% comment.user_id = current_user.id %>
+        <%= form_for [@stake, comment] do |f| %>
+       <%= f.text_area :content, class: 'form-control', :placeholder => "Add your comment", rows: 3 %>
+        <%= f.hidden_field :stake_id %>
+        <%= f.hidden_field :user_id %>
+         <div class="row pull-right">
+          <div class="col-lg-6">
+          <%= f.submit "Post", :class=> "btn-u btn-brd btn-brd-hover rounded-2x btn-u-blue" %>
+          </div>
+        </div>
+        <% end %>
+
+    </ul>
   </div>
 </div>
 
