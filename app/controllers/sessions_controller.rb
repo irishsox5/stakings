@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < Devise::OmniauthCallBacksController
  def create
     auth = request.env["omniauth.auth"]
     puts auth["credentials"]

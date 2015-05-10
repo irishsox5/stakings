@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: {session: "omniauth_callbacks"}
+
   resources :relationships
 
   resources :tournaments

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 #User Log In
+gem 'devise'
 gem 'omniauth-twitter'
 gem "figaro"
 

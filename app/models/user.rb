@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :stakes
   has_many :tours
@@ -41,4 +45,8 @@ class User < ActiveRecord::Base
     return users
   end
 
+def password_required?
+  super && provider.blank?
+
+end
 end

@@ -3,10 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   include PublicActivity::StoreController
   protect_from_forgery with: :exception
-  helper_method :current_user
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-  hide_action :current_user
 end
+
+

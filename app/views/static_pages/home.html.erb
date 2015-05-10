@@ -172,7 +172,7 @@ style="z-index: 6">
                 <p>Join the StakeHouse Community now by logging in with Twitter! Browse Through Ongoing and Upcoming Tournaments, Get Staked Or Find Players That Want To Be Staked.</p>
             </div>
             <div class="col-md-3 btn-buy animated fadeInRight">
-                 <%= link_to signin_path, :class=> "btn-u btn-u-lg", id: "login" do %>
+                 <%= link_to user_omniauth_authorize_path(:twitter), :class=> "btn-u btn-u-lg", id: "login" do %>
                 <i class="fa fa-twitter"></i>
                 Get In On The Action
                 <% end %>
