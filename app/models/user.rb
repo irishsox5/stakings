@@ -45,8 +45,7 @@ class User < ActiveRecord::Base
     return users
   end
 
-def password_required?
-  super && provider.blank?
-
-end
+  def password_required?
+    super && provider.blank?
+  end
 end

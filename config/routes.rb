@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: {session: "omniauth_callbacks"}
 
   resources :relationships
 
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
   get '/landing_page' => "static_pages#home", :as => "landing"
 
   # USER ROUTES==============================================
+   devise_for :users, controllers: {session: "omniauth_callbacks"}
    get "/auth/twitter", :as => "signin"
    get "/auth/:provider/callback" => "sessions#create"
    get "/signout" => "sessions#destroy", :as => :signout
