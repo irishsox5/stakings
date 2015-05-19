@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:twitter]
 
   has_many :stakes
   has_many :tours
@@ -13,7 +13,15 @@ class User < ActiveRecord::Base
   has_many :investment_relationships, class_name: "Relationship",foreign_key: 'investment_id'
   # End Investment Relationship
 
-# Creating User (Omniauth)
+  validates_presence_of :uid, :provider
+  validates_uniqueness_of :uid, :scope => :provider
+
+  def email_required?
+    # Twitter does not provide email via API
+    false
+  end
+
+  # Creating User (Omniauth)
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -25,7 +33,7 @@ class User < ActiveRecord::Base
     end
   end
 
-   def investors
+  def investors
     relationships = self.investment_relationships
     users = []
 

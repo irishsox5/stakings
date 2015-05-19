@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :tournaments
 
   resources :stakes do
-     resources :comments, :only => [:create]
- end
+    resources :comments, :only => [:create]
+  end
 
   resources :tours
 
@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   get '/landing_page' => "static_pages#home", :as => "landing"
 
   # USER ROUTES==============================================
-   devise_for :users, :controllers => { registrations: 'registrations' }
-   get "/auth/twitter", :as => "signin"
-   get "/auth/:provider/callback" => "sessions#create"
-   get "/signout" => "sessions#destroy", :as => :signout
+  devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "callbacks" }
+  as :user do
+    get '/auth/twitter/' => "callbacks#passthru {:provider=>/twitter/}"
+    get "/auth/twitter", :as => "signin"
+    get "/signout" => "sessions#destroy"
+  end
 
-   resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index]
 
 end
