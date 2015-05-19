@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509212623) do
+ActiveRecord::Schema.define(version: 20150519061616) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -114,21 +114,13 @@ ActiveRecord::Schema.define(version: 20150509212623) do
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
-    #from Twitter
     t.string   "username"
     t.string   "image_url"
     t.string   "screen_name"
     t.string   "location"
-    # User Will Need To input Following
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.date     "date_of_birth"
-    t.integer  "social_security_number"
-    #included from Devise
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
+    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -138,6 +130,11 @@ ActiveRecord::Schema.define(version: 20150509212623) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "address"
+    t.date     "date_of_birth"
+    t.integer  "social_security_number"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
